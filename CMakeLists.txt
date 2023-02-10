@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.21)
+<<<<<<< HEAD
+project(Game_Шаблон VERSION 0.0.1 LANGUAGES CXX)
+=======
 project(Game_NewSample VERSION 0.0.1 LANGUAGES CXX)
+>>>>>>> 3dd3d423ab99c11d4a09ad910bf5893b2b8de868
 
 include(FetchContent)
 FetchContent_Declare(SFML
@@ -21,8 +25,19 @@ add_custom_command(
   COMMAND ${CMAKE_COMMAND} -E copy 
     ${PROJECT_SOURCE_DIR}/game.png
     $<TARGET_FILE_DIR:Game_NewSample>/game.png)
+<<<<<<< HEAD
+	
+add_custom_command(
+  TARGET Game_NewSample POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy 
+    ${PROJECT_SOURCE_DIR}/openal32.dll
+    $<TARGET_FILE_DIR:Game_NewSample>/openal32.dll)
+
+target_link_libraries(Game_NewSample PRIVATE sfml-graphics sfml-system sfml-window sfml-audio)
+=======
 
 target_link_libraries(Game_NewSample PRIVATE sfml-graphics sfml-system sfml-window)
+>>>>>>> 3dd3d423ab99c11d4a09ad910bf5893b2b8de868
 
 target_compile_features(Game_NewSample PRIVATE cxx_std_14)
 

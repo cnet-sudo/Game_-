@@ -75,7 +75,7 @@ sf::Shader* AssetManager::GetShader(std::string const& vsFile, std::string const
 	}
 	else
 	{
-		auto& shader = (shaderMap[combinedKey]=std::unique_ptr<sf::Shader>(new sf::Shader()));
+		auto const& shader = (shaderMap[combinedKey]=std::make_unique<sf::Shader>());
 		shader->loadFromFile(vsFile,fsFile);
 		return shader.get();
 	}
